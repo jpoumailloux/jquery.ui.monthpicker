@@ -19,6 +19,7 @@ Available settings and their defaults
 ---
 
 General settings:
+
 	showOn: 'focus', // 'focus' for popup on focus,
 	// 'button' for trigger button, or 'both' for either
 	showAnim: 'fadeIn', // Name of jQuery animation for popup
@@ -39,6 +40,7 @@ General settings:
 	disabled: false // The initial disabled state
 
 L10N:
+
 	dateFormat: 'mm/yy',
 	yearSuffix: '' // Additional text to append to the year in the month headers
 	prevText: 'Prev', // Display text for previous month link
@@ -50,6 +52,7 @@ L10N:
 	'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], // For formatting</pre>
 
 Date Formatting:
+
 	The format can be combinations of the following:
 	m  - month of year (no leading zero)
 	mm - month of year (two digit)
