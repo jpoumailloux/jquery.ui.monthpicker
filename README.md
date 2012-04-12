@@ -13,7 +13,7 @@ You will notice that the design is very similar to JQuery UI Datepicker, as it u
 Demo
 ---
 
-[Here!](http://ec2-46-137-53-243.eu-west-1.compute.amazonaws.com/jquery-ui-monthpicker/)
+[Here!](http://jpoumailloux.com/jquery-ui-monthpicker/)
 
 Available settings and their defaults
 ---

@@ -51,6 +51,7 @@
 	   allowing multiple different settings on the same page. */
 
 	function Monthpicker() {
+		this.uuid = 0;
 		this._curInst = null; // The current instance in use
 		this._disabledInputs = []; // List of date picker inputs that have been disabled
 		this._monthpickerShowing = false; // True if the popup picker is showing , false if not
