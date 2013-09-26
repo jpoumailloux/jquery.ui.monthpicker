@@ -89,7 +89,7 @@
 			disabled: false // The initial disabled state
 		};
 		$.extend(this._defaults, this.regional['']);
-		this.dpDiv = bindHover($('<div id="' + this._mainDivId + '" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>'));
+		this.dpDiv = bindHover($('<div id="' + this._mainDivId + '" class="ui-datepicker ui-monthpicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>'));
 	}
 	
 	$.extend(Monthpicker.prototype, {
@@ -525,7 +525,7 @@
 			var html = '';
 			var year = currentDate && currentDate.year ? currentDate.year : 2011;
 			var prevText = this._get(inst, 'prevText');
-			var nextText = this._get(inst, 'prevText');
+			var nextText = this._get(inst, 'nextText');
 			var stepYears = this._get(inst, 'stepYears');
 			var monthNames = this._get(inst, 'monthNames');
 			var monthNamesShort = this._get(inst, 'monthNamesShort');
