@@ -525,7 +525,7 @@
 			var html = '';
 			var year = currentDate && currentDate.year ? currentDate.year : 2011;
 			var prevText = this._get(inst, 'prevText');
-			var nextText = this._get(inst, 'prevText');
+			var nextText = this._get(inst, 'nextText');
 			var stepYears = this._get(inst, 'stepYears');
 			var monthNames = this._get(inst, 'monthNames');
 			var monthNamesShort = this._get(inst, 'monthNamesShort');
