@@ -89,7 +89,7 @@
 			disabled: false // The initial disabled state
 		};
 		$.extend(this._defaults, this.regional['']);
-		this.dpDiv = bindHover($('<div id="' + this._mainDivId + '" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>'));
+		this.dpDiv = bindHover($('<div id="' + this._mainDivId + '" class="ui-datepicker ui-monthpicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>'));
 	}
 	
 	$.extend(Monthpicker.prototype, {
