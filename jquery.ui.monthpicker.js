@@ -71,6 +71,7 @@
 		this._defaults = { // Global defaults for all the date picker instances
 			showOn: 'focus', // 'focus' for popup on focus,
 				// 'button' for trigger button, or 'both' for either
+			hideOn: 'blur', // 'blur' for hiding on blur,
 			showAnim: 'fadeIn', // Name of jQuery animation for popup
 			buttonText: '...', // Text for trigger button
 			buttonImage: '', // URL for trigger button image
@@ -191,11 +192,14 @@
 		/* Make attachments based on settings. */
 		_attachments: function(input, inst) {
 			input.unbind('focus', this._showMonthpicker);
+			input.unbind('blur',  this._hideMonthpicker);
 			if (inst.trigger)
 				inst.trigger.remove();
 			var showOn = this._get(inst, 'showOn');
-			if (showOn == 'focus' || showOn == 'both') // pop-up month picker when in the marked field
+			var hideOn = this._get(inst, 'hideOn');
+			if (showOn == 'focus' || showOn == 'both') { // pop-up month picker when in the marked field
 				input.focus(this._showMonthpicker);
+			}
 			if (showOn == 'button' || showOn == 'both') { // pop-up month picker when button clicked
 				var buttonText = this._get(inst, 'buttonText');
 				var buttonImage = this._get(inst, 'buttonImage');
@@ -208,6 +212,13 @@
 					else
 						$.monthpicker._showMonthpicker(input[0]);
 					return false;
+				});
+			}
+			if (hideOn == 'blur') {
+				input.blur(function(event) {
+					if ($.monthpicker._monthpickerShowing) {
+						$.monthpicker._hideMonthpicker();
+					}
 				});
 			}
 		},
@@ -310,7 +321,6 @@
 
 		/* Generate the date picker content. */
 		_updateMonthpicker: function(inst) {
-		
 			var self = this;
 			self.maxRows = 4; //Reset the max number of rows being displayed (see #7043)
 			var borders = $.monthpicker._getBorders(inst.dpDiv);
