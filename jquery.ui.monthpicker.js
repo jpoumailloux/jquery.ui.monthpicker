@@ -215,7 +215,29 @@
 				});
 			}
 			if (hideOn == 'blur') {
+				// init
+				var clicked;
+				
+				// grab element that now has focus
+				$(document).mousedown(function(event) {
+					clicked = event.target;
+				});
+				
+				// handle the blur
 				input.blur(function(event) {
+					// if clicked element is part of picker, do not hide
+					var parents = $(clicked).parents();
+					var found   = false;
+					parents.each(function() {
+						if (this === inst.dpDiv.get(0)) {
+							found = true;
+						}
+					});
+					if (found) {
+						return true;
+					}
+					
+					// otherwise, hide
 					if ($.monthpicker._monthpickerShowing) {
 						$.monthpicker._hideMonthpicker();
 					}
